@@ -79,7 +79,8 @@ from idlelib import PyShell
 from idlelib.ColorDelegator import ColorDelegator, make_pat
 from idlelib.configHandler import idleConf
 import idlelib.IOBinding
-import imp
+#import imp
+import importlib
 
 DEBUG = False
 
@@ -87,7 +88,8 @@ HAS_CYTHON = True
 HAS_RELOAD = False
 
 try:
-    imp.find_module('cython')
+    #imp.find_module('cython')
+    importlib.util.find_spec('cython')
 except ImportError:
     HAS_CYTHON = False
 

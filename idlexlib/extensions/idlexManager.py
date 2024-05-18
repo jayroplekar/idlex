@@ -47,7 +47,7 @@ import sys
 
 import os
 import re
-import imp
+#import imp
 import __main__
 
 if sys.version < '3':

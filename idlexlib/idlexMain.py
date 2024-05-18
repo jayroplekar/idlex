@@ -48,7 +48,7 @@ from idlexlib.extensionManager import extensionManager
 import idlelib
 import os
 import __main__
-import imp
+#import imp
 import traceback
 import re
 

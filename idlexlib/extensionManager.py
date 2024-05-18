@@ -50,7 +50,7 @@ else:
 
 
 
-import imp
+#import imp
 try:
     import importlib
     HAS_IMPORTLIB = True
@@ -70,7 +70,8 @@ def make_config_parser(cfg):
     # parse the configuration from the fake file
     confparse = IdleConfParser('')
     try:
-        confparse.readfp(fp)
+        #confparse.readfp(fp)
+        confparse.read_file(fp)
     except BaseException as e:
         print('\n Configuration Parse Error', e)
         return None
@@ -141,7 +142,9 @@ class ExtensionManager(object):
     def find_extension(self, name):
         """ Locates an extension """
         path = self.extension_dir
-        info = imp.find_module(name, [path])
+        #info = imp.find_module(name, [path])
+        info =importlib.util.find_spec(name)
+
 
 
     def load_extension_cfg(self, extName):
